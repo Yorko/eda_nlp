@@ -56,6 +56,14 @@ python code/augment.py --input=sst2_train.txt --output=sst2_augmented.txt --num_
 
 Note that at least one augmentation operation is applied per augmented sentence regardless of alpha. So if you do alpha=0.001 and your sentence only has four words, one augmentation operation will still be performed. Best of luck!
 
+### Passing synonyms from a file
+
+Instead of using WordNet, you can pass synonyms from a file. Eg., [here](https://github.com/cltl/OpenDutchWordnet/blob/master/synonyms.tsv) you can find a 28k-long list of Dutch synonyms. For that, you need to pass an additional argument `path_to_synonyms`
+
+```
+python code/augment.py --input=sst2_train.txt --output=sst2_augmented.txt --num_aug=16 --alpha=0.05 --path_to_synonyms data/dutch_synonyms.tsv
+```
+
 # Experiments (Coming soon)
 
 ### Word embeddings
